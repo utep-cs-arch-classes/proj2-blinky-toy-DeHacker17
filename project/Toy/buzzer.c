@@ -2,6 +2,14 @@
 #include "libTimer.h"
 #include "buzzer.h"
 
+static short a_note = 440;
+static short b_note = 494;
+static short c_note = 523;
+static short d_note = 587;
+static short e_note = 659;
+static short f_note = 698;
+static short g_note = 784;
+
 void buzzer_init()
 {
     /* 
@@ -24,8 +32,36 @@ void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k resu
   CCR1 = cycles >> 1;		/* one half cycle */
 }
 
-
-    
-    
-  
-
+void mySong() {
+  char oldMcdonald[] = "ccgaageeddcgccgaageeddcggccggccgaageeddc";
+  char temp;
+  static int i = 0;
+  temp = oldMcdonald[i];
+  switch(temp) {
+  case 'a':
+    buzzer_set_period(a_note);
+    break;
+  case 'b':
+    buzzer_set_period(b_note);
+    break;
+  case 'c':
+    buzzer_set_period(c_note);
+    break;
+  case 'd':
+    buzzer_set_period(d_note);
+    break;
+  case 'e':
+    buzzer_set_period(e_note);
+    break;
+  case 'f':
+    buzzer_set_period(f_note);
+    break;
+  case 'g':
+    buzzer_set_period(g_note);
+    break;
+  }
+  i++;
+  if (i == sizeof(oldMcdonald) - 1) {
+    i = 0;
+  }
+}
