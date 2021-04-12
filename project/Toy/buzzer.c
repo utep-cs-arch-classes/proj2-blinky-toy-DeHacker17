@@ -10,6 +10,14 @@ static short e_note = 659;
 static short f_note = 698;
 static short g_note = 784;
 
+static short upa_note = 880;
+static short upb_note = 988;
+static short upc_note = 1047;
+static short upd_note = 1175;
+static short upe_note = 1319;
+static short upf_note = 1397;
+static short upg_note = 1568;
+
 void buzzer_init()
 {
     /* 
@@ -65,3 +73,105 @@ void mySong() {
     i = 0;
   }
 }
+
+void mySong2() {
+  char ILoveYou[] = "gegegagfedefefgcdefgdfedc";
+  char temp;
+  static int j = 0;
+  temp = ILoveYou[j];
+  switch(temp) {
+  case 'a':
+    buzzer_set_period(a_note);
+    break;
+  case 'b':
+    buzzer_set_period(b_note);
+    break;
+  case 'c':
+    buzzer_set_period(c_note);
+    break;
+  case 'd':
+    buzzer_set_period(d_note);
+    break;
+  case 'e':
+    buzzer_set_period(e_note);
+    break;
+  case 'f':
+    buzzer_set_period(f_note);
+    break;
+  case 'g':
+    buzzer_set_period(g_note);
+    break;
+  }
+  j++;
+  if (j == sizeof(ILoveYou) - 1) {
+    j = 0;
+  }
+}
+
+void mySong3() {
+  char JingleBells[] = "egcdefededgegcdefegfdc";
+  char temp;
+  static int k = 0;
+  temp = JingleBells[k];
+  switch(temp) {
+  case 'a':
+    buzzer_set_period(upa_note);
+    break;
+  case 'b':
+    buzzer_set_period(upb_note);
+    break;
+  case 'c':
+    buzzer_set_period(upc_note);
+    break;
+  case 'd':
+    buzzer_set_period(upd_note);
+    break;
+  case 'e':
+    buzzer_set_period(upe_note);
+    break;
+  case 'f':
+    buzzer_set_period(upf_note);
+    break;
+  case 'g':
+    buzzer_set_period(upg_note);
+    break;
+  }
+  k++;
+  if (k == sizeof(JingleBells) - 1) {
+    k = 0;
+  }
+}
+
+void mySong4() {
+  char TwinkleStar[] = "gdedcbagdcbadcbagdedcbag";
+  char temp;
+  static int l = 0;
+  temp = TwinkleStar[l];
+  switch(temp) {
+  case 'a':
+    buzzer_set_period(a_note);
+    break;
+  case 'b':
+    buzzer_set_period(b_note);
+    break;
+  case 'c':
+    buzzer_set_period(c_note);
+    break;
+  case 'd':
+    buzzer_set_period(d_note);
+    break;
+  case 'e':
+    buzzer_set_period(e_note);
+    break;
+  case 'f':
+    buzzer_set_period(f_note);
+    break;
+  case 'g':
+    buzzer_set_period(g_note);
+    break;
+  }
+  l++;
+  if (l == sizeof(TwinkleStar) - 1) {
+    l = 0;
+  }
+} 

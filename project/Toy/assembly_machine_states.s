@@ -5,4 +5,11 @@
 
 	.global toggle_red
 toggle_red:
-	mov 
+	mov.b r2, r12		;
+	cmp.b state, 0		;
+	mov.b &0, &red_on	;
+	mov.b &1, &state	;
+	cmp.b state, 1
+	mov.b &1, &red_on	;
+	mov.b &0, &state	;
+	ret

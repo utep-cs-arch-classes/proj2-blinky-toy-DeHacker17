@@ -6,12 +6,11 @@
 void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static char blink_count = 0;
-  static char song_count = 0;
-  if (++blink_count == 30) {
-    state_advance();
+  if (++blink_count == songTimer) {
     blink_count = 0;
-    } 
-  if (++song_count == 40) {
-    mySong();
+    //state_advance(); // Makes blink pattern
+    upswitches_interrupt_handler(); // Awesome songs with all 4 buttons
   }
+  //upswitches_interrupt_handler(); // Weird sounds
+  //state_advance();  // Red will blink ultra fast
 }
