@@ -7,12 +7,11 @@ void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   static char blink_count = 0;
   static char song_count = 0;
-  int i = 0;
   if (++blink_count == 30) {
     state_advance();
     blink_count = 0;
-  }
-  if (++song_count == 100) {
+    } 
+  if (++song_count == 40) {
     mySong();
   }
 }

@@ -37,7 +37,6 @@ char toggle_green()	/* only toggle green if red is on!  */
 void state_advance()		/* alternate between toggling red & green */
 {
   char changed = 0;  
-
   static enum {R=0, G=1} color = G;
   switch (color) {
       case R:
@@ -49,7 +48,6 @@ void state_advance()		/* alternate between toggling red & green */
 	color = R;
 	break;
   }
-
   led_changed = changed;
   led_update();
 }

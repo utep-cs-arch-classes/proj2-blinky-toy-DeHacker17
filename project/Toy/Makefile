@@ -26,4 +26,6 @@ wdInterruptHandler.o: stateMachines.h
 
 stateMachines.o: led.h stateMachines.h
 
-buzzer.c: buzzer.h
+buzzer.o: buzzer.c buzzer.h
+
+switches.o: switches.c switches.h

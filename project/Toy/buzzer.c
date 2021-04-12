@@ -33,7 +33,7 @@ void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k resu
 }
 
 void mySong() {
-  char oldMcdonald[] = "ccgaageeddcgccgaageeddcggccggccgaageeddc";
+  char oldMcdonald[] = "cgagedcgcgagedcgcgcgagedc";
   char temp;
   static int i = 0;
   temp = oldMcdonald[i];
